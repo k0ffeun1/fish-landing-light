@@ -11,20 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:       #f2f4f7;
-      --bg2:      #ffffff;
-      --bg3:      #f8f9fb;
-      --border:   #e4e7ed;
-      --shadow:   0 1px 6px rgba(0,0,0,.07), 0 2px 16px rgba(0,0,0,.04);
-      --orange:   #f47c20;
-      --orange2:  #e06010;
-      --text:     #1a1f2e;
-      --dim:      #5a6272;
-      --muted:    #9aa0ae;
+      --bg:      #edf4fb;
+      --bg2:     #ffffff;
+      --bg3:     #f0f7fd;
+      --border:  #c8ddf0;
+      --shadow:  0 1px 4px rgba(40,90,160,.07), 0 2px 14px rgba(40,90,160,.05);
+      --orange:  #f47c20;
+      --orange2: #d96410;
+      --blue:    #3a80c0;
+      --text:    #1a2c3e;
+      --dim:     #4a6880;
+      --muted:   #8aaabb;
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--bg);
@@ -32,9 +32,7 @@
       overflow-x: hidden;
     }
 
-    /* ══════════════════════════════════════
-       NAV
-    ══════════════════════════════════════ */
+    /* ══ NAV ══════════════════════════════════ */
     .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -42,17 +40,17 @@
       height: 54px;
       background: #fff;
       border-bottom: 1px solid var(--border);
+      border-top: 3px solid var(--orange);
       display: flex;
       align-items: center;
       padding: 0 1.6rem;
       gap: 1.2rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      box-shadow: 0 2px 8px rgba(40,90,160,.08);
     }
-
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: .4rem;
+      gap: .45rem;
       font-size: .95rem;
       font-weight: 800;
       color: var(--text);
@@ -60,8 +58,6 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .nav-logo svg { width: 22px; height: 22px; }
-
     .nav-links {
       display: flex;
       gap: .1rem;
@@ -70,7 +66,7 @@
     }
     .nav-links a {
       display: block;
-      padding: .35rem .75rem;
+      padding: .35rem .78rem;
       color: var(--dim);
       text-decoration: none;
       font-size: .8rem;
@@ -81,7 +77,6 @@
     }
     .nav-links a:hover { color: var(--text); background: var(--bg); }
     .nav-links a.active { color: var(--orange); }
-
     .nav-right {
       display: flex;
       align-items: center;
@@ -96,8 +91,7 @@
       color: var(--dim);
       display: flex; align-items: center; justify-content: center;
       cursor: pointer;
-      font-size: .9rem;
-      transition: background .18s;
+      transition: background .18s, color .18s;
     }
     .nav-icon-btn:hover { background: var(--border); color: var(--text); }
     .nav-avatar {
@@ -111,44 +105,40 @@
       cursor: pointer;
     }
 
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
+    /* ══ HERO ══════════════════════════════════ */
     .hero {
       margin-top: 54px;
       background: #fff;
       border-bottom: 1px solid var(--border);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
-      min-height: 400px;
+      align-items: stretch;
+      min-height: 390px;
       overflow: hidden;
     }
-
     .hero-left {
       padding: 3.5rem 2.5rem 3.5rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
     .hero-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
       font-weight: 900;
       line-height: 1.15;
       color: var(--text);
-      margin-bottom: .8rem;
+      margin-bottom: .75rem;
     }
     .hero-title .accent { color: var(--orange); }
-
     .hero-sub {
-      font-size: .9rem;
+      font-size: .88rem;
       font-weight: 400;
       color: var(--dim);
       margin-bottom: 1.8rem;
-      line-height: 1.6;
     }
-
     .btn-register {
       display: inline-block;
-      padding: .7rem 1.8rem;
+      padding: .72rem 1.9rem;
       background: var(--orange);
       color: #fff;
       font-family: 'Montserrat', sans-serif;
@@ -158,16 +148,16 @@
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background .2s, transform .2s;
+      transition: background .2s, transform .15s;
       letter-spacing: .02em;
       margin-bottom: 1.5rem;
+      align-self: flex-start;
     }
     .btn-register:hover { background: var(--orange2); transform: translateY(-1px); }
-
     .hero-social-proof {
       display: flex;
       align-items: center;
-      gap: .7rem;
+      gap: .75rem;
     }
     .avatars-row { display: flex; }
     .avatars-row .av {
@@ -175,7 +165,7 @@
       border-radius: 50%;
       border: 2px solid #fff;
       margin-left: -7px;
-      font-size: .6rem;
+      font-size: .58rem;
       font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       color: #fff;
@@ -184,10 +174,9 @@
     .social-count { font-size: .8rem; font-weight: 600; color: var(--dim); }
     .social-count strong { color: var(--text); }
 
-    /* Hero right — photo collage */
+    /* Hero collage */
     .hero-right {
-      position: relative;
-      height: 400px;
+      height: 390px;
       overflow: hidden;
     }
     .hero-collage {
@@ -196,22 +185,23 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 3px;
+      background: var(--border);
     }
     .collage-cell {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
       overflow: hidden;
+      background: var(--bg3);
     }
-    .collage-cell:first-child {
-      grid-row: 1 / 3;
-      font-size: 5rem;
+    .collage-cell:first-child { grid-row: 1 / 3; }
+    .collage-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
     }
+    .collage-cell:hover img { transform: scale(1.04); }
 
-    /* ══════════════════════════════════════
-       STATS BAR
-    ══════════════════════════════════════ */
+    /* ══ STATS ══════════════════════════════════ */
     .stats-bar {
       background: var(--bg3);
       border-bottom: 1px solid var(--border);
@@ -225,9 +215,13 @@
     .stat-item {
       display: flex;
       align-items: center;
-      gap: .55rem;
+      gap: .6rem;
     }
-    .stat-item .si { font-size: 1rem; }
+    .stat-icon {
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+    }
     .stat-num {
       font-size: 1.15rem;
       font-weight: 800;
@@ -240,9 +234,7 @@
       letter-spacing: .04em;
     }
 
-    /* ══════════════════════════════════════
-       FEED AREA
-    ══════════════════════════════════════ */
+    /* ══ FEED ════════════════════════════════════ */
     .feed-area {
       max-width: 1140px;
       margin: 0 auto;
@@ -253,7 +245,7 @@
       align-items: start;
     }
 
-    /* ── TABS ── */
+    /* Tabs */
     .tabs {
       display: flex;
       align-items: center;
@@ -272,10 +264,10 @@
       font-weight: 600;
       color: var(--dim);
       cursor: pointer;
-      transition: background .18s, color .18s;
       border: none;
       background: transparent;
       font-family: 'Montserrat', sans-serif;
+      transition: background .18s, color .18s;
     }
     .tab:hover { color: var(--text); background: var(--bg); }
     .tab.active { background: var(--bg); color: var(--orange); }
@@ -289,6 +281,7 @@
       border-radius: 6px;
       padding: .3rem .75rem;
     }
+    .search-box svg { color: var(--muted); flex-shrink: 0; }
     .search-box input {
       background: transparent;
       border: none;
@@ -300,7 +293,7 @@
     }
     .search-box input::placeholder { color: var(--muted); }
 
-    /* ── BLOCK ── */
+    /* Block */
     .section-block {
       background: #fff;
       border: 1px solid var(--border);
@@ -315,17 +308,8 @@
       align-items: center;
       justify-content: space-between;
     }
-    .block-title {
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .block-more {
-      font-size: .75rem;
-      color: var(--orange);
-      cursor: pointer;
-      font-weight: 600;
-    }
+    .block-title { font-size: .88rem; font-weight: 700; color: var(--text); }
+    .block-more { font-size: .75rem; color: var(--blue); cursor: pointer; font-weight: 600; }
 
     /* Popular users */
     .popular-users {
@@ -336,7 +320,6 @@
     }
     .popular-users::-webkit-scrollbar { height: 3px; }
     .popular-users::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
     .user-chip {
       display: flex;
       flex-direction: column;
@@ -348,25 +331,29 @@
     .uc-av {
       width: 54px; height: 54px;
       border-radius: 50%;
+      overflow: hidden;
+      border: 2.5px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
+      font-size: .95rem;
       font-weight: 700;
       color: #fff;
       flex-shrink: 0;
-      border: 2px solid var(--border);
+      transition: border-color .2s;
     }
+    .user-chip:hover .uc-av { border-color: var(--orange); }
+    .uc-av img { width: 100%; height: 100%; object-fit: cover; }
     .uc-name {
       font-size: .68rem;
       font-weight: 600;
       color: var(--dim);
       text-align: center;
-      max-width: 60px;
+      max-width: 62px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    /* ── POST CARD ── */
+    /* Post card */
     .post-card {
       background: #fff;
       border: 1px solid var(--border);
@@ -384,60 +371,73 @@
     .post-av {
       width: 42px; height: 42px;
       border-radius: 50%;
+      overflow: hidden;
       display: flex; align-items: center; justify-content: center;
       font-size: .88rem;
       font-weight: 700;
       color: #fff;
       flex-shrink: 0;
     }
+    .post-av img { width: 100%; height: 100%; object-fit: cover; }
     .post-user-info { flex: 1; }
     .post-username { font-size: .88rem; font-weight: 700; color: var(--text); }
     .post-date { font-size: .71rem; color: var(--muted); margin-top: .1rem; }
-    .post-menu { color: var(--muted); font-size: 1.1rem; cursor: pointer; padding: .2rem .4rem; }
-
+    .post-menu {
+      color: var(--muted);
+      cursor: pointer;
+      padding: .2rem .4rem;
+      font-size: 1.1rem;
+      line-height: 1;
+      letter-spacing: .05em;
+    }
     .post-text {
-      padding: 0 1.1rem .7rem;
+      padding: 0 1.1rem .75rem;
       font-size: .84rem;
       color: var(--dim);
       line-height: 1.65;
     }
-
     .post-img {
       width: 100%;
       aspect-ratio: 16/8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
+      overflow: hidden;
+      background: var(--bg);
     }
-
+    .post-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s;
+    }
+    .post-card:hover .post-img img { transform: scale(1.02); }
     .post-actions {
       display: flex;
       align-items: center;
       gap: .2rem;
-      padding: .65rem 1.1rem;
+      padding: .6rem 1.1rem;
       border-top: 1px solid var(--border);
     }
     .post-action {
       display: flex;
       align-items: center;
       gap: .35rem;
-      padding: .28rem .6rem;
+      padding: .28rem .65rem;
       border-radius: 6px;
       font-size: .76rem;
       color: var(--muted);
       cursor: pointer;
       transition: background .18s, color .18s;
       font-weight: 600;
+      border: none;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
     }
     .post-action:hover { background: var(--bg); color: var(--dim); }
-    .post-action.liked { color: #e03060; }
+    .post-action.liked { color: #d03050; }
+    .post-action.liked svg { fill: #d03050; stroke: #d03050; }
 
-    /* ══════════════════════════════════════
-       SIDEBAR
-    ══════════════════════════════════════ */
+    /* ══ SIDEBAR ══════════════════════════════ */
     .sidebar { display: flex; flex-direction: column; gap: 1rem; }
-
     .sb-block {
       background: #fff;
       border: 1px solid var(--border);
@@ -453,7 +453,6 @@
     }
     .divider { height: 1px; background: var(--border); }
 
-    /* Groups */
     .group-card {
       display: flex;
       align-items: center;
@@ -466,10 +465,11 @@
     .group-thumb {
       width: 46px; height: 46px;
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
+      overflow: hidden;
       flex-shrink: 0;
+      background: var(--bg);
     }
+    .group-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .group-info { flex: 1; min-width: 0; }
     .group-name {
       font-size: .78rem;
@@ -495,7 +495,6 @@
     }
     .btn-join:hover { background: rgba(244,124,32,.08); }
 
-    /* Events */
     .event-card {
       display: flex;
       gap: .75rem;
@@ -505,16 +504,16 @@
     }
     .event-card:hover { background: var(--bg3); }
     .event-thumb {
-      width: 52px; height: 44px;
+      width: 54px; height: 46px;
       border-radius: 7px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem;
+      overflow: hidden;
       flex-shrink: 0;
+      background: var(--bg);
     }
+    .event-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .event-title { font-size: .77rem; font-weight: 700; color: var(--text); line-height: 1.4; }
     .event-meta { font-size: .67rem; color: var(--muted); margin-top: .2rem; }
 
-    /* App buttons */
     .app-btns {
       display: flex;
       flex-direction: column;
@@ -524,23 +523,19 @@
     .app-btn {
       display: flex;
       align-items: center;
-      gap: .6rem;
-      padding: .5rem .9rem;
+      gap: .65rem;
+      padding: .55rem .9rem;
       background: var(--text);
       border-radius: 8px;
-      cursor: pointer;
       text-decoration: none;
       color: #fff;
       transition: opacity .18s;
     }
     .app-btn:hover { opacity: .85; }
-    .app-icon { font-size: 1.3rem; }
-    .app-btn-sub { font-size: .6rem; color: rgba(255,255,255,.65); font-weight: 500; }
+    .app-btn-sub { font-size: .6rem; color: rgba(255,255,255,.6); font-weight: 500; }
     .app-btn-name { font-size: .82rem; font-weight: 700; }
 
-    /* ══════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════ */
+    /* ══ FOOTER ══════════════════════════════ */
     .site-footer {
       background: #fff;
       border-top: 1px solid var(--border);
@@ -560,14 +555,16 @@
     }
     .footer-links a:hover { color: var(--dim); }
     .footer-copy { font-size: .7rem; color: var(--muted); }
-    .footer-social { display: flex; gap: .5rem; }
+    .footer-social { display: flex; gap: .4rem; }
     .f-icon {
       width: 28px; height: 28px;
       border-radius: 50%;
       background: var(--bg);
       border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: .75rem;
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--dim);
       cursor: pointer;
       transition: background .18s;
     }
@@ -581,19 +578,19 @@
     }
     @media (max-width: 600px) {
       .nav-links { display: none; }
-      .stats-bar { gap: 1.5rem; }
+      .stats-bar { gap: 2rem; }
       .hero-left { padding: 2rem 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- ══ NAV ══════════════════════════════════════════════════ -->
+<!-- ══ NAV ═══════════════════════════════════════════════════ -->
 <nav class="nav">
   <a class="nav-logo" href="#">
-    <svg viewBox="0 0 24 24" fill="none">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
       <path d="M3 12 C5 6 10 3 14 6 C18 9 20 7 22 5" stroke="#f47c20" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M3 12 C4 15 7 18 11 17 C15 16 18 18 20 20" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M3 12 C4 15 7 18 11 17 C15 16 18 18 20 20" stroke="#aac4d8" stroke-width="1.5" stroke-linecap="round"/>
       <circle cx="19" cy="9" r="2.5" fill="#f47c20"/>
     </svg>
     КлёвоМесто
@@ -605,13 +602,21 @@
     <li><a href="#">Магазин</a></li>
   </ul>
   <div class="nav-right">
-    <button class="nav-icon-btn">🔍</button>
-    <button class="nav-icon-btn">🔔</button>
+    <button class="nav-icon-btn" title="Поиск">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <button class="nav-icon-btn" title="Уведомления">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+    </button>
     <div class="nav-avatar">АМ</div>
   </div>
 </nav>
 
-<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<!-- ══ HERO ═══════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-left">
     <h1 class="hero-title">
@@ -623,9 +628,9 @@
     <div class="hero-social-proof">
       <div class="avatars-row">
         <div class="av" style="background:linear-gradient(135deg,#f47c20,#c04010)">АС</div>
-        <div class="av" style="background:linear-gradient(135deg,#1e7a8a,#0d4a5a)">ВТ</div>
-        <div class="av" style="background:linear-gradient(135deg,#4a8a1e,#2a5a0e)">МК</div>
-        <div class="av" style="background:linear-gradient(135deg,#8a1e7a,#5a0e4a)">ОП</div>
+        <div class="av" style="background:linear-gradient(135deg,#3a80c0,#1a5090)">ВТ</div>
+        <div class="av" style="background:linear-gradient(135deg,#2a8a5a,#1a5a3a)">МК</div>
+        <div class="av" style="background:linear-gradient(135deg,#7a50c0,#4a2a90)">ОП</div>
       </div>
       <span class="social-count"><strong>433 564</strong> рыбака в сети</span>
     </div>
@@ -633,31 +638,58 @@
 
   <div class="hero-right">
     <div class="hero-collage">
-      <div class="collage-cell" style="background:linear-gradient(160deg,#c8e8d8,#a0c8b0)">🎣</div>
-      <div class="collage-cell" style="background:linear-gradient(160deg,#d4e8f4,#b0d0e8)">🐟</div>
-      <div class="collage-cell" style="background:linear-gradient(160deg,#f4e4c8,#e0c890)">🏕️</div>
+      <div class="collage-cell">
+        <img src="Images/fishing_son_father.avif" alt="Рыбалка с сыном"/>
+      </div>
+      <div class="collage-cell">
+        <img src="Images/fishing_mount.avif" alt="Рыбалка в горах"/>
+      </div>
+      <div class="collage-cell">
+        <img src="Images/fishing_sunsine.avif" alt="Рассветная рыбалка"/>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ STATS ════════════════════════════════════════════════ -->
+<!-- ══ STATS ══════════════════════════════════════════════════ -->
 <div class="stats-bar">
   <div class="stat-item">
-    <span class="si">📝</span>
+    <span class="stat-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="16" y1="13" x2="8" y2="13"/>
+        <line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+    </span>
     <div>
       <div class="stat-num">55 673</div>
       <div class="stat-lbl">Всего публикаций</div>
     </div>
   </div>
   <div class="stat-item">
-    <span class="si">🏆</span>
+    <span class="stat-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polyline points="8 21 12 21 16 21"/>
+        <line x1="12" y1="17" x2="12" y2="21"/>
+        <path d="M7 4H4a2 2 0 0 0-2 2v1a6 6 0 0 0 6 6h8a6 6 0 0 0 6-6V6a2 2 0 0 0-2-2h-3"/>
+        <rect x="7" y="2" width="10" height="4" rx="1"/>
+      </svg>
+    </span>
     <div>
       <div class="stat-num">28 810</div>
       <div class="stat-lbl">Поймано трофеев</div>
     </div>
   </div>
   <div class="stat-item">
-    <span class="si">👥</span>
+    <span class="stat-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    </span>
     <div>
       <div class="stat-num">1 029</div>
       <div class="stat-lbl">Активных групп</div>
@@ -665,7 +697,7 @@
   </div>
 </div>
 
-<!-- ══ FEED AREA ════════════════════════════════════════════ -->
+<!-- ══ FEED AREA ══════════════════════════════════════════════ -->
 <div class="feed-area">
 
   <!-- LEFT -->
@@ -678,7 +710,9 @@
       <button class="tab">Видео</button>
       <div class="tab-spacer"></div>
       <div class="search-box">
-        <span style="color:var(--muted);font-size:.82rem">🔍</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
         <input type="text" placeholder="Поиск..."/>
       </div>
     </div>
@@ -695,27 +729,27 @@
           <span class="uc-name">Иван С.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#1e7a4a,#0d4a2a)">МД</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#3a80c0,#1a5090)">МД</div>
           <span class="uc-name">Михаил Д.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#1a4a9a,#0a2a6a)">АК</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#2a8a5a,#1a5a3a)">АК</div>
           <span class="uc-name">Алексей К.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#7a1a9a,#4a0a6a)">НП</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#7a50c0,#4a2a90)">НП</div>
           <span class="uc-name">Николай П.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#9a4a1a,#6a2a0a)">СВ</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#c06030,#803010)">СВ</div>
           <span class="uc-name">Сергей В.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#1a7a7a,#0a4a4a)">ОМ</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#1a8090,#0a5060)">ОМ</div>
           <span class="uc-name">Олег М.</span>
         </div>
         <div class="user-chip">
-          <div class="uc-av" style="background:linear-gradient(135deg,#6a6a1a,#3a3a0a)">РТ</div>
+          <div class="uc-av" style="background:linear-gradient(135deg,#6a7020,#3a4010)">РТ</div>
           <span class="uc-name">Роман Т.</span>
         </div>
       </div>
@@ -733,23 +767,44 @@
       </div>
       <div class="post-text">
         Хороший клёв сегодня на озере! Поймал отличного окуня, весом почти 1.5 кг.
-        Снасть — блесна №3, забросы вдоль тростника. Всем советую это место! 🎣
+        Снасть — блесна №3, забросы вдоль тростника. Всем советую это место!
       </div>
-      <div class="post-img" style="background:linear-gradient(135deg,#c8e8d8,#8abda8)">
-        <span>🐟</span>
+      <div class="post-img">
+        <img src="Images/fishing_river.avif" alt="Рыбалка на реке"/>
       </div>
       <div class="post-actions">
-        <span class="post-action liked">❤️ 218</span>
-        <span class="post-action">💬 34</span>
-        <span class="post-action">🔁 12</span>
-        <span class="post-action">⭐ 16</span>
+        <button class="post-action liked" data-like>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#d03050" stroke="#d03050" stroke-width="2" stroke-linecap="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          218
+        </button>
+        <button class="post-action" data-like>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          34
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+          12
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          16
+        </button>
       </div>
     </div>
 
     <!-- Post 2 -->
     <div class="post-card">
       <div class="post-header">
-        <div class="post-av" style="background:linear-gradient(135deg,#1e7a4a,#0d4a2a)">ВТ</div>
+        <div class="post-av" style="background:linear-gradient(135deg,#3a80c0,#1a5090)">ВТ</div>
         <div class="post-user-info">
           <div class="post-username">Владимир Титов</div>
           <div class="post-date">47 минут назад · Ладога</div>
@@ -757,24 +812,45 @@
         <span class="post-menu">···</span>
       </div>
       <div class="post-text">
-        Вчера вернулся с трёхдневной рыбалки в глухой тайге. Щука на 6 кг — незабываемые эмоции! 😤🔥
+        Вчера вернулся с трёхдневной рыбалки в глухой тайге. Щука на 6 кг — незабываемые эмоции!
         Ловил на джиг с берега, вода прозрачная как стекло.
       </div>
-      <div class="post-img" style="background:linear-gradient(135deg,#c8dce8,#90b8d0)">
-        <span>🐡</span>
+      <div class="post-img">
+        <img src="Images/fishing.avif" alt="Рыбалка"/>
       </div>
       <div class="post-actions">
-        <span class="post-action">❤️ 972</span>
-        <span class="post-action">💬 87</span>
-        <span class="post-action">🔁 34</span>
-        <span class="post-action">⭐ 14</span>
+        <button class="post-action" data-like>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          972
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          87
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+          34
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          14
+        </button>
       </div>
     </div>
 
     <!-- Post 3 -->
     <div class="post-card">
       <div class="post-header">
-        <div class="post-av" style="background:linear-gradient(135deg,#1a4a9a,#0a2a6a)">МК</div>
+        <div class="post-av" style="background:linear-gradient(135deg,#2a8a5a,#1a5a3a)">МК</div>
         <div class="post-user-info">
           <div class="post-username">Максим Куликов</div>
           <div class="post-date">2 часа назад · Волга, Самара</div>
@@ -783,16 +859,37 @@
       </div>
       <div class="post-text">
         Судак пошёл! Сегодня за утро — 4 хвоста, самый крупный на 3.8 кг.
-        Работает твистер на 12г джиге, горизонт 4-6 метров. Погода идеальная 🌤️
+        Работает твистер на 12г джиге, горизонт 4–6 метров. Погода идеальная.
       </div>
-      <div class="post-img" style="background:linear-gradient(135deg,#e4d4f0,#c0a8d8)">
-        <span>🦈</span>
+      <div class="post-img">
+        <img src="Images/fishing_sea.avif" alt="Морская рыбалка"/>
       </div>
       <div class="post-actions">
-        <span class="post-action liked">❤️ 341</span>
-        <span class="post-action">💬 52</span>
-        <span class="post-action">🔁 18</span>
-        <span class="post-action">⭐ 29</span>
+        <button class="post-action liked" data-like>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#d03050" stroke="#d03050" stroke-width="2" stroke-linecap="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          341
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          52
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+          18
+        </button>
+        <button class="post-action">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          29
+        </button>
       </div>
     </div>
 
@@ -805,7 +902,9 @@
       <div class="sb-title">Популярные группы</div>
       <div class="divider"></div>
       <div class="group-card">
-        <div class="group-thumb" style="background:linear-gradient(135deg,#c8dce8,#8ab0cc)">🎣</div>
+        <div class="group-thumb">
+          <img src="Images/fishing_river.avif" alt="Спиннинг"/>
+        </div>
         <div class="group-info">
           <div class="group-name">Рыбалка на спиннинге</div>
           <div class="group-meta">3 025 подписчиков</div>
@@ -813,7 +912,9 @@
         <button class="btn-join">Вступить</button>
       </div>
       <div class="group-card">
-        <div class="group-thumb" style="background:linear-gradient(135deg,#d0eaf4,#a0c8e0)">❄️</div>
+        <div class="group-thumb">
+          <img src="Images/fishing_mount.avif" alt="Зимняя"/>
+        </div>
         <div class="group-info">
           <div class="group-name">Зимняя рыбалка</div>
           <div class="group-meta">2 820 подписчиков</div>
@@ -821,7 +922,9 @@
         <button class="btn-join">Вступить</button>
       </div>
       <div class="group-card">
-        <div class="group-thumb" style="background:linear-gradient(135deg,#d0ecd8,#98c8a8)">🌿</div>
+        <div class="group-thumb">
+          <img src="Images/fishing_sunsine.avif" alt="Нахлыст"/>
+        </div>
         <div class="group-info">
           <div class="group-name">Нахлыст и муха</div>
           <div class="group-meta">1 440 подписчиков</div>
@@ -829,7 +932,9 @@
         <button class="btn-join">Вступить</button>
       </div>
       <div class="group-card">
-        <div class="group-thumb" style="background:linear-gradient(135deg,#f4d8d0,#d8a898)">🔴</div>
+        <div class="group-thumb">
+          <img src="Images/fishing_sea.avif" alt="Карп"/>
+        </div>
         <div class="group-info">
           <div class="group-name">Карповая рыбалка</div>
           <div class="group-meta">988 подписчиков</div>
@@ -842,28 +947,34 @@
       <div class="sb-title">Главные события</div>
       <div class="divider"></div>
       <div class="event-card">
-        <div class="event-thumb" style="background:linear-gradient(135deg,#fde8d4,#f4c090)">🏆</div>
+        <div class="event-thumb">
+          <img src="Images/fishing_son_father.avif" alt="Фестиваль"/>
+        </div>
         <div>
           <div class="event-title">Российский Фестиваль Рыбалки 2026</div>
           <div class="event-meta">14–16 июня · Сочи, Сириус</div>
         </div>
       </div>
       <div class="event-card">
-        <div class="event-thumb" style="background:linear-gradient(135deg,#d4eef4,#98cce0)">🚤</div>
+        <div class="event-thumb">
+          <img src="Images/fishing.avif" alt="Турнир"/>
+        </div>
         <div>
           <div class="event-title">Онлайн-турнир «Большой Улов»</div>
           <div class="event-meta">22–23 марта · Онлайн</div>
         </div>
       </div>
       <div class="event-card">
-        <div class="event-thumb" style="background:linear-gradient(135deg,#d4ecd8,#98c8a0)">🌊</div>
+        <div class="event-thumb">
+          <img src="Images/fishing_river.avif" alt="Чемпионат"/>
+        </div>
         <div>
           <div class="event-title">Чемпионат по поплавочной ловле</div>
           <div class="event-meta">5 апреля · Москва</div>
         </div>
       </div>
       <div style="padding:.5rem 1.1rem .9rem">
-        <button style="width:100%;padding:.5rem;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--dim);font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:background .18s" onmouseover="this.style.background='var(--border)'" onmouseout="this.style.background='var(--bg3)'">Вступить →</button>
+        <button style="width:100%;padding:.5rem;border-radius:6px;border:1px solid var(--border);background:var(--bg3);color:var(--dim);font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:background .18s" onmouseover="this.style.background='var(--border)'" onmouseout="this.style.background='var(--bg3)'">Все события →</button>
       </div>
     </div>
 
@@ -872,14 +983,18 @@
       <div class="divider"></div>
       <div class="app-btns">
         <a href="#" class="app-btn">
-          <span class="app-icon">🍎</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/>
+          </svg>
           <div>
             <div class="app-btn-sub">Загрузить в</div>
             <div class="app-btn-name">App Store</div>
           </div>
         </a>
         <a href="#" class="app-btn">
-          <span class="app-icon">▶️</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+            <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+          </svg>
           <div>
             <div class="app-btn-sub">Доступно в</div>
             <div class="app-btn-name">Google Play</div>
@@ -899,17 +1014,16 @@
     <a href="#">Поддержка</a>
   </div>
   <div class="footer-social">
-    <div class="f-icon">📘</div>
-    <div class="f-icon">📸</div>
-    <div class="f-icon">🐦</div>
-    <div class="f-icon">▶️</div>
+    <div class="f-icon">VK</div>
+    <div class="f-icon">TG</div>
+    <div class="f-icon">YT</div>
+    <div class="f-icon">OK</div>
   </div>
   <div class="footer-copy">© 2026 КлёвоМесто</div>
   <div class="footer-links">
     <a href="#">Политика</a>
     <a href="#">Условия</a>
     <a href="#">Поддержка</a>
-    <a href="#">Тайная политика</a>
   </div>
 </footer>
 
@@ -920,10 +1034,19 @@
       tab.classList.add('active');
     });
   });
-  document.querySelectorAll('.post-action').forEach(btn => {
-    if (btn.textContent.includes('❤️')) {
-      btn.addEventListener('click', () => btn.classList.toggle('liked'));
-    }
+
+  document.querySelectorAll('[data-like]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('liked');
+      const svg = btn.querySelector('svg');
+      if (btn.classList.contains('liked')) {
+        svg.setAttribute('fill', '#d03050');
+        svg.setAttribute('stroke', '#d03050');
+      } else {
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+      }
+    });
   });
 </script>
 </body>
